@@ -1,0 +1,231 @@
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-up</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+   
+ <style>
+    .form-control{
+      width: 193px;
+    }
+    * {
+      padding: 5px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: rgb(198, 193, 183);
+    }
+
+    .row {
+      background-color: white;
+      border-radius: 30px;
+    }
+
+    img {
+      border-radius: 30px;
+    }
+    .img-fluid {
+    max-width: 100%;
+    height: 100%;
+    }
+    h1 {
+      margin-left: 4pc;
+      margin-top: 3pc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1 {
+      margin-top: 5px;
+      margin-left: 32%;
+    }
+    #but:hover {
+            background: white;
+            border: 1px solid;
+            color: black;
+        }
+
+    .formerror {
+        color:red;
+    }
+
+    #Message,#Message2{
+      color: red;
+    }
+.error{
+  color:red;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <section class="form my-4 mx-5">
+
+    <div class="container">
+
+      <div class="row no-gutters">
+
+        <div class="col-lg-5">
+
+          <img src="edungo.jpg" alt="" class="img-fluid">
+        </div>
+
+        <div class="col-lg-7">
+          <h1>Sign-up</h1>
+
+          <form  class="row lg-3" name="myForm" method="post" id="form_register">
+            <div class="col-md-4"  id="name">
+              <label for="validationServer01" class="form-label" type="text" >First name</label>
+              <input type="text"  name="fname" class="form-control" id="FirstName" value="">
+              <span id="message"></span>
+              </div>
+        <br>
+            <div class="col-md-4"  id="name">
+              <label for="validationServer02" class="form-label">Last name</label>
+              <input type="text"  name="lname" class="form-control" id="LastName" value="">
+              <span id="message"></span>
+            </div>
+
+            <div class="col-md-3">
+              <label for="validationServer04" class="form-label">Type</label>
+              <select class="form-control" name="type" >
+                <option selected disabled value="">Select..</option>
+                <option>Individual</option>
+                <option>organization</option>
+              </select>
+
+            </div>
+
+        <div class="col-md-3" class="formdesign">
+          <label for="validationCustom05" class="form-label">Mobile.</label>
+          <input type="text"  name="fmobile" class="form-control" id="fmobile"  placeholder="1234567890" >
+
+        </div>
+
+        <div class="col-md-4" class="formdesign" id="email" style="width: fit-content;margin-left: 48px;">
+        <label for="validationServer03" class="form-label">Email</label>
+        <div class="input-group has-validation" style="margin-top:-5px;">
+        <span class="input-group-text" id="inputGroupPrepend3">@</span>
+        <input type="email" name="email" class="form-control"  placeholder="xyz@">
+        </div>
+        </div>
+            <div class="col-12">
+                <br><input class="btn btn-primary" type="submit" value="Sign-up"
+                style=" padding:8px 107px;
+                margin-top: 11px;
+                margin-bottom: 15px;
+                margin-left: 177px;
+                text-align: center;">
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    
+    <!-- jquery validation plugin //-->
+    
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#form_register").validate({
+        rules:{
+        'fname':{
+        required: true,
+        minlength: 3,
+        accept: "[a-zA-Z]+",
+        },
+        'lname':{
+        required: true,
+        minlength: 3,
+        accept: "[a-zA-Z]+",
+
+      },
+      'email':{
+      required: true,
+      email: true,
+     },
+      'fmobile':{
+      required: true,
+      accept: "[0-9]+",
+      minlength: 10,
+      maxlength: 16,
+      
+
+      },
+      'type':{
+        required: true,
+      }
+      },
+      
+      messages:{
+      
+      'fname':{
+      
+      required: "Please enter first name",
+      
+      minlength: "Plase enter  3 characters!",
+      accept: "Plase enter only characters!",
+      },
+      
+      'lname':{
+      required: " Please enter last name",
+      minlength: "Plase enter  3 characters",
+      accept: "Plase enter only characters!",
+      },
+      
+      'email':{
+      
+      required: "Please enter email ",
+      
+      email: "Please enter a valid email address!",
+      
+      },
+      
+      'fmobile':{
+      
+      required: "Please enter mobile number",
+      
+      minlength  : "Please enter at least 10 digits!",
+      maxlength  : "Please enter at least 10 digits!",
+      accept: "enter only numbers",
+      
+      },
+      'type':{
+      
+      required: "Please select",
+      
+
+      
+      },
+      
+      
+      }
+      
+      });
+      
+      });
+      
+      </script>
+  </body>
+  </html>
